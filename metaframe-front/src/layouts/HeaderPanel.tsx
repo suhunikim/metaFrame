@@ -1,13 +1,8 @@
-// =============================================================================
-// [1. Import Section]
-// =============================================================================
-
+import { useState } from 'react';
 // AntD 컴포넌트 Import
 import { Button, Space, Tooltip, Avatar, Typography, Select, Dropdown } from "antd";
-
 // Type Import (빌드 시 제거됨)
 import type { MenuProps } from "antd";
-
 // 아이콘 에셋 Import
 import {
     // 헤더 메인
@@ -55,7 +50,7 @@ import {
     ReadOutlined,          // [Icon] 문서
     KeyOutlined            // [Icon] 단축키
 } from "@ant-design/icons";
-
+import SettingsModal from '../components/SettingsModal';
 // 스타일시트 연결
 import "./HeaderPanel.css";
 
@@ -66,6 +61,8 @@ const { Text } = Typography;
 // HeaderPanel: 상단 제어바 (로고, 메뉴, 뷰포트, 설정)
 // =============================================================================
 export default function HeaderPanel() {
+
+    const [isSettingsOpen, setIsSettingsOpen] = useState(false);
 
     // -------------------------------------------------------------------------
     // [Menu Configuration]
@@ -238,13 +235,23 @@ export default function HeaderPanel() {
                 <Tooltip title="Search All (Ctrl+P)">
                     <Button type="text" icon={<SearchOutlined />} style={{ color: "#fff" }} />
                 </Tooltip>
-                {/* [Flow] 클릭 -> 설정 모달 */}
+                {/* [3. Trigger 연결] onClick 이벤트 추가 */}
                 <Tooltip title="Settings">
-                    <Button type="text" icon={<SettingOutlined />} style={{ color: "#fff" }} />
+                    <Button
+                        type="text"
+                        icon={<SettingOutlined />}
+                        style={{ color: "#fff" }}
+                        onClick={() => setIsSettingsOpen(true)}
+                    />
                 </Tooltip>
                 {/* [Flow] 클릭 -> 계정 정보 */}
                 <Avatar style={{ backgroundColor: '#1890ff', cursor: 'pointer' }} icon={<UserOutlined />} />
             </div>
+            {/* [4. Render 추가] 닫는 태그(</div>) 직전에 배치 */}
+            <SettingsModal
+                open={isSettingsOpen}
+                onClose={() => setIsSettingsOpen(false)}
+            />
         </div>
     );
 }
