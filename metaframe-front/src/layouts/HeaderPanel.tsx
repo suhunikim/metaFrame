@@ -23,8 +23,9 @@ import {
 } from "@ant-design/icons";
 
 // 모달 컴포넌트 Import
-import SettingsModal from '../components/SettingsModal';
+import SettingsModal from '../components/modals/SettingsModal.tsx';
 import NewProjectModal from '../components/NewProjectModal';
+import OpenProjectModal from '../components/modals/OpenProjectModal';
 
 // [Diet 2] 분리한 메뉴 설정 파일(Config) 가져오기
 import { getMenuItems } from '../config/headerMenuConfig';
@@ -42,6 +43,7 @@ export default function HeaderPanel() {
 
     const [isSettingsOpen, setIsSettingsOpen] = useState(false);
     const [isNewProjectOpen, setIsNewProjectOpen] = useState(false);
+    const [isOpenProjectOpen, setIsOpenProjectOpen] = useState(false);
 
     // -------------------------------------------------------------------------
     // [Menu Configuration]
@@ -50,6 +52,7 @@ export default function HeaderPanel() {
     // -------------------------------------------------------------------------
     const menuItems = getMenuItems(
         () => setIsNewProjectOpen(true), // onNewProject: 'New Project' 메뉴 클릭 시 실행
+        () => setIsOpenProjectOpen(true), // onOpenProject: 'Open Project' 메뉴 클릭 시 실행
         () => setIsSettingsOpen(true)    // onSettings: 'Settings' 메뉴 클릭 시 실행
     );
 
@@ -166,6 +169,9 @@ export default function HeaderPanel() {
                 open={isNewProjectOpen}
                 onClose={() => setIsNewProjectOpen(false)}
             />
+
+            {/* Open Project 모달 */}
+            <OpenProjectModal open={isOpenProjectOpen} onClose={() => setIsOpenProjectOpen(false)} />
 
             {/* [4. Render 추가] 닫는 태그(</div>) 직전에 배치 */}
             <SettingsModal
