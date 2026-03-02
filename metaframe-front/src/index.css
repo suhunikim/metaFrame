@@ -24,3 +24,16 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+
+/* 모든 모달의 뒷배경을 흐리게 처리 (Glassmorphism) */
+.ant-modal-mask {
+    background-color: #00000073 !important; /* 약간 투명한 검은색 */
+    backdrop-filter: blur(8px) !important;            /* 뒤를 흐리게 뭉개기 */
+    -webkit-backdrop-filter: blur(8px) !important;    /* 사파리/크롬 호환성 */
+}
+
+/* (선택) 모달 창 자체도 살짝 투명하게 */
+.ant-modal-content {
+    background-color: #1E1F22F2 !important; /* 아주 살짝 비치는 다크 그레이 */
+    box-shadow: 0 8px 32px 0 #0000005E !important; /* 깊은 그림자 */
+}
