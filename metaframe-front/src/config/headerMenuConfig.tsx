@@ -1,6 +1,6 @@
 import type {MenuProps} from "antd";
 import {
-    FileAddOutlined, FolderOpenOutlined, SaveOutlined, ExportOutlined, FileTextOutlined, PoweroffOutlined,
+    FileAddOutlined, FolderOpenOutlined, SaveOutlined, ExportOutlined, /*FileTextOutlined,*/ PoweroffOutlined,
     UndoOutlined, RedoOutlined, ScissorOutlined, CopyOutlined, SnippetsOutlined, DeleteOutlined, ClearOutlined,
     LayoutOutlined, ExpandOutlined, ZoomInOutlined, ZoomOutOutlined, PlaySquareOutlined,
     FontSizeOutlined, BorderOutlined, PictureOutlined, CodeSandboxOutlined,
@@ -14,7 +14,10 @@ import {
 // =============================================================================
 export const getMenuItems = (
     onNewProject: () => void,  // [Action] 새 프로젝트 모달 열기 함수
-    onOpenProject: () => void, // [New] Open Porject 리모컨 추가
+    onOpenProject: () => void, // [Action] Open Porject 모달 열기 함수
+    onSaveProject: () => void, // [Action] Save 모달 열기 함수
+    onSaveAsProject: () => void, // [Action] Save As 모달 열기 함수
+    onExportProject: () => void, // [Action] Export Porject 모달 열기 함수
     onSettings: () => void     // [Action] 설정 모달 열기 함수
 ): MenuProps['items'] => [
     // -------------------------------------------------------------------------
@@ -38,22 +41,36 @@ export const getMenuItems = (
                 label: 'Open Project...',
                 icon: <FolderOpenOutlined/>,
                 extra: 'Ctrl+O',
-                onClick: onOpenProject // [New] 클릭 이벤트 연결
+                onClick: onOpenProject
             },
 
             {type: 'divider'}, // 구분선
 
             // [Flow] 클릭 -> 현재 작업 내용을 서버/로컬 스토리지에 저장
-            {key: 'save', label: 'Save', icon: <SaveOutlined/>, extra: 'Ctrl+S'},
-            // [Flow] 클릭 -> 열려있는 모든 탭과 변경 사항 저장
-            {key: 'save-all', label: 'Save All', icon: <SaveOutlined/>, extra: 'Ctrl+Shift+S'},
+            {
+                key: 'save',
+                label: 'Save',
+                icon: <SaveOutlined/>,
+                extra: 'Ctrl+S',
+                onClick: onSaveProject
+            },
+            {
+                key: 'save-as',
+                label: 'Save As...',
+                icon: <CopyOutlined/>,
+                extra: 'Ctrl+Shift+S',
+                onClick: onSaveAsProject
+            },
 
             {type: 'divider'}, // 구분선
 
             // [Flow] 클릭 -> 전체 프로젝트를 Zip 파일로 압축해서 다운로드
-            {key: 'export-zip', label: 'Export Project (Zip)', icon: <ExportOutlined/>},
-            // [Flow] 클릭 -> 현재 보고 있는 페이지만 JSON/HTML로 내보내기
-            {key: 'export-page', label: 'Export Page (Single)', icon: <FileTextOutlined/>},
+            {
+                key: 'export-zip',
+                label: 'Export Project (Zip)',
+                icon: <ExportOutlined/>,
+                onClick: onExportProject
+            },
 
             {type: 'divider'}, // 구분선
 

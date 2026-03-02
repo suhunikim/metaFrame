@@ -24,8 +24,10 @@ import {
 
 // 모달 컴포넌트 Import
 import SettingsModal from '../components/modals/SettingsModal.tsx';
-import NewProjectModal from '../components/NewProjectModal';
+import NewProjectModal from '../components/modals/NewProjectModal.tsx';
 import OpenProjectModal from '../components/modals/OpenProjectModal';
+import SaveProjectModal from '../components/modals/SaveProjectModal';
+import ExportProjectModal from '../components/modals/ExportProjectModal';
 
 // [Diet 2] 분리한 메뉴 설정 파일(Config) 가져오기
 import { getMenuItems } from '../config/headerMenuConfig';
@@ -44,6 +46,11 @@ export default function HeaderPanel() {
     const [isSettingsOpen, setIsSettingsOpen] = useState(false);
     const [isNewProjectOpen, setIsNewProjectOpen] = useState(false);
     const [isOpenProjectOpen, setIsOpenProjectOpen] = useState(false);
+    // Save 모달 상태와 모드 관리
+    const [isSaveOpen, setIsSaveOpen] = useState(false);
+    const [saveMode, setSaveMode] = useState<'save' | 'saveAs'>('save');
+    // Export project 모달 상태와 모드 관리
+    const [isExportOpen, setIsExportOpen] = useState(false);
 
     // -------------------------------------------------------------------------
     // [Menu Configuration]
@@ -53,6 +60,9 @@ export default function HeaderPanel() {
     const menuItems = getMenuItems(
         () => setIsNewProjectOpen(true), // onNewProject: 'New Project' 메뉴 클릭 시 실행
         () => setIsOpenProjectOpen(true), // onOpenProject: 'Open Project' 메뉴 클릭 시 실행
+        () => { setSaveMode('save'); setIsSaveOpen(true); },      // Save 클릭 시
+        () => { setSaveMode('saveAs'); setIsSaveOpen(true); },    // Save As 클릭 시
+        () => setIsExportOpen(true), // onOpenProject: 'Export Open Project' 메뉴 클릭 시 실행
         () => setIsSettingsOpen(true)    // onSettings: 'Settings' 메뉴 클릭 시 실행
     );
 
@@ -171,7 +181,24 @@ export default function HeaderPanel() {
             />
 
             {/* Open Project 모달 */}
-            <OpenProjectModal open={isOpenProjectOpen} onClose={() => setIsOpenProjectOpen(false)} />
+            <OpenProjectModal
+                open={isOpenProjectOpen}
+                onClose={() => setIsOpenProjectOpen(false)}
+            />
+
+            {/* Save 모달 */}
+            {/* [MODIFIED] mode 속성을 전달하여 모달의 텍스트와 기능을 분기 처리합니다. */}
+            <SaveProjectModal
+                open={isSaveOpen}
+                mode={saveMode}
+                onClose={() => setIsSaveOpen(false)}
+            />
+
+            {/* Export Project 모달 */}
+            <ExportProjectModal
+                open={isExportOpen}
+                onClose={() => setIsExportOpen(false)}
+            />
 
             {/* [4. Render 추가] 닫는 태그(</div>) 직전에 배치 */}
             <SettingsModal
