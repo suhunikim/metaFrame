@@ -1,7 +1,0 @@
-/.gradle/
-/build/
-/target/
-/.idea/
-/.mvn/wrapper/maven-wrapper.jar
-*.log
-/.env

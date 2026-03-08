@@ -1,0 +1,125 @@
+
+/* 헤더 전체 컨테이너: 왼쪽과 오른쪽을 양 끝으로 밀냄*/
+.header-panel-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.header-left, .header-right {
+    display: flex;
+    align-items: center;
+    gap:16px;
+}
+
+.header-center {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    min-width: 0;
+}
+
+/* ==========================================================================
+   [Main Menu] 메인 드롭다운 (다크 모드)
+   ========================================================================== */
+.ant-dropdown-menu.header-dropdown-menu {
+    background-color: #2b2d30 !important;
+    border: 1px solid #3e4045;
+    padding: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    /* min-width 제거: 내용물에 맞게 자연스럽게 줄어들도록 변경 */
+}
+
+/* ==========================================================================
+   [Sub Menu] 하위 메뉴
+   ========================================================================== */
+.ant-dropdown-menu-sub {
+    background-color: #2b2d30 !important;
+    border: 1px solid #3e4045 !important;
+    padding: 4px !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* ==========================================================================
+   [Common Items] 아이템 공통 스타일
+   ========================================================================== */
+.header-dropdown-menu .ant-dropdown-menu-item,
+.header-dropdown-menu .ant-dropdown-menu-submenu-title,
+.ant-dropdown-menu-sub .ant-dropdown-menu-item,
+.ant-dropdown-menu-sub .ant-dropdown-menu-submenu-title {
+    color: #bcbec4 !important;
+    border-radius: 4px;
+    /* 수직 중앙 정렬을 위해 Flexbox 보정 */
+    display: flex !important;
+    align-items: center !important;
+    padding: 5px 10px 5px 12px !important;
+}
+
+/* 호버 효과 */
+.header-dropdown-menu .ant-dropdown-menu-item-active,
+.header-dropdown-menu .ant-dropdown-menu-submenu-title-active,
+.ant-dropdown-menu-sub .ant-dropdown-menu-item-active,
+.ant-dropdown-menu-sub .ant-dropdown-menu-submenu-title-active {
+    background-color: #1890ff !important;
+    color: #fff !important;
+}
+
+/* ==========================================================================
+   [Arrow Icon Fix] 화살표(>) 디자인 수정
+   - 위치: 텍스트 바로 옆으로 붙임 (position: absolute 제거)
+   - 크기: 10px로 축소
+   ========================================================================== */
+.header-dropdown-menu .ant-dropdown-menu-submenu-expand-icon,
+.header-dropdown-menu .ant-dropdown-menu-submenu-expand-icon *,
+.ant-dropdown-menu-sub .ant-dropdown-menu-submenu-expand-icon,
+.ant-dropdown-menu-sub .ant-dropdown-menu-submenu-expand-icon * {
+    color: #bcbec4 !important; /* 평소 회색 */
+    fill: #bcbec4 !important;
+
+    /* [수정] 크기를 한 치수 작게 (10px) */
+    font-size: 10px !important;
+
+    /* [수정] 텍스트와의 간격을 적당히 조절 (너무 멀지 않게) */
+    margin-left: 10px !important;
+
+    /* [수정] 위치 강제 이동(absolute) 제거 -> 수직 정렬 자연스럽게 */
+    position: static !important;
+}
+
+/* 호버 시 흰색 */
+.header-dropdown-menu .ant-dropdown-menu-submenu-title-active .ant-dropdown-menu-submenu-expand-icon,
+.header-dropdown-menu .ant-dropdown-menu-submenu-title-active .ant-dropdown-menu-submenu-expand-icon *,
+.ant-dropdown-menu-sub .ant-dropdown-menu-submenu-title-active .ant-dropdown-menu-submenu-expand-icon,
+.ant-dropdown-menu-sub .ant-dropdown-menu-submenu-title-active .ant-dropdown-menu-submenu-expand-icon * {
+    color: #ffffff !important;
+    fill: #ffffff !important;
+}
+
+/* ==========================================================================
+   [Shortcut Text] 단축키 텍스트
+   ========================================================================== */
+.header-dropdown-menu .ant-dropdown-menu-item-extra,
+.ant-dropdown-menu-sub .ant-dropdown-menu-item-extra {
+    color: #bcbec4 !important;
+    font-size: 10px !important; /* 단축키도 작게 통일 */
+    opacity: 0.8;
+    margin-left: 16px; /* 텍스트와 단축키 사이 간격 */
+}
+
+/* 호버 시 */
+.header-dropdown-menu .ant-dropdown-menu-item-active .ant-dropdown-menu-item-extra,
+.ant-dropdown-menu-sub .ant-dropdown-menu-item-active .ant-dropdown-menu-item-extra {
+    color: #ffffff !important;
+    opacity: 1;
+}
+
+/* 기타 아이콘 및 구분선 */
+.ant-dropdown-menu-item-icon { color: inherit !important; }
+.header-dropdown-menu .ant-dropdown-menu-item-divider,
+.ant-dropdown-menu-sub .ant-dropdown-menu-item-divider {
+    background-color: #3e4045 !important;
+    margin: 4px 0;
+}

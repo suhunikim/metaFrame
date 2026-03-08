@@ -3,10 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/MetaFrame.iml" filepath="$PROJECT_DIR$/MetaFrame.iml" />
-      <module fileurl="file://$PROJECT_DIR$/metaframe-backend/metaframe-backend.iml" filepath="$PROJECT_DIR$/metaframe-backend/metaframe-backend.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/metaframe-backend.main.iml" filepath="$PROJECT_DIR$/.idea/modules/metaframe-backend.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/metaframe-backend.test.iml" filepath="$PROJECT_DIR$/.idea/modules/metaframe-backend.test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/metaframe-front/metaframe-front.iml" filepath="$PROJECT_DIR$/metaframe-front/metaframe-front.iml" />
     </modules>
   </component>
 </project>
