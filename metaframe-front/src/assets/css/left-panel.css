@@ -1,0 +1,120 @@
+/*
+ * - Role: Defines frontend style rules.
+ * - Notes: This file is loaded by a matching component or page.
+ */
+
+.left-panel-container {
+  display: flex;
+  height: 100%;
+  background: var(--mf-surface-strong);
+}
+
+.left-activity-bar {
+  width: 52px;
+  height: 100%;
+  border-right: 1px solid var(--mf-border-strong);
+  background: color-mix(in srgb, var(--mf-surface-strong) 92%, #000);
+  overflow: hidden;
+}
+
+.left-activity-bar .ant-menu {
+  background: transparent;
+  border-inline-end: none !important;
+}
+
+.left-activity-bar .ant-menu .ant-menu-item {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  padding: 0 !important;
+  margin-inline: 0 !important;
+  width: 100% !important;
+  height: 44px !important;
+}
+
+.left-activity-bar .ant-menu .ant-menu-item .ant-menu-item-icon {
+  margin: 0 !important;
+  color: var(--mf-text-secondary);
+  font-size: 18px !important;
+  line-height: 1 !important;
+}
+
+.left-activity-bar .ant-menu-item .ant-menu-title-content {
+  display: none !important;
+}
+
+.left-panel-content-area {
+  display: flex;
+  min-width: 0;
+  flex: 1;
+  flex-direction: column;
+  background: var(--mf-surface-strong);
+  overflow-x: hidden;
+}
+
+.left-panel-content-area__topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--mf-border-subtle);
+}
+
+.left-panel-content-area__label {
+  color: var(--mf-text-primary);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.left-panel-content-area__meta {
+  color: var(--mf-text-muted);
+  font-size: 10px;
+  white-space: nowrap;
+}
+
+.left-panel-placeholder {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 8px;
+  padding: 14px 12px 16px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.left-panel-placeholder__title {
+  color: var(--mf-text-primary);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.left-panel-placeholder__description {
+  color: var(--mf-text-secondary);
+  font-size: 12px;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+.left-panel-placeholder__list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.left-panel-placeholder__item {
+  min-width: 0;
+  padding: 8px 10px;
+  color: var(--mf-text-secondary);
+  font-size: 12px;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+  background: color-mix(in srgb, var(--mf-surface-elevated) 84%, transparent);
+  border: 1px solid var(--mf-border-subtle);
+  border-radius: 10px;
+}

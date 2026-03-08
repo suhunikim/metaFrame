@@ -1,0 +1,67 @@
+/*
+ * - Role: Defines frontend style rules.
+ * - Notes: This file is loaded by a matching component or page.
+ */
+
+.ide-layout {
+  height: 100vh;
+  background: var(--mf-app-bg);
+}
+
+.ide-header {
+  display: flex;
+  align-items: center;
+  height: 56px;
+  padding: 0 20px;
+  background: var(--mf-surface-strong);
+  border-bottom: 1px solid var(--mf-border-strong);
+}
+
+.ide-content {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.tool-window {
+  height: 100%;
+  color: var(--mf-text-secondary);
+  background: var(--mf-surface-strong);
+}
+
+.editor-area {
+  height: 100%;
+  color: var(--mf-text-secondary);
+  background: var(--mf-app-bg);
+}
+
+.ide-footer {
+  height: 38px;
+  padding: 0;
+  background: var(--mf-surface-strong);
+  border-top: 1px solid var(--mf-border-strong);
+}
+
+.allotment-module_splitView__L-yRc {
+  --separator-border: var(--mf-border-subtle);
+  --focus-border: var(--mf-accent);
+  --sash-size: 10px;
+  --sash-hover-size: 4px;
+  background: var(--mf-app-bg);
+}
+
+.project-selector .ant-select-selector {
+  color: var(--mf-text-secondary) !important;
+  background: transparent !important;
+  font-weight: 500;
+}
+
+.project-selector .ant-select-arrow {
+  color: var(--mf-text-secondary) !important;
+}
+
+.project-selector:hover .ant-select-selector {
+  background: color-mix(in srgb, var(--mf-text-primary) 6%, transparent) !important;
+  border-radius: 4px;
+}

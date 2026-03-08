@@ -1,0 +1,13 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="MetaFrame Frontend Dev" type="js.build_tools.npm" factoryName="npm">
+    <package-json value="$PROJECT_DIR$/metaframe-front/package.json" />
+    <command value="run" />
+    <scripts>
+      <script value="dev" />
+    </scripts>
+    <node-interpreter value="C:\Users\shkim\AppData\Roaming\JetBrains\IntelliJIdea2024.3\node\versions\24.14.0\node.exe" />
+    <package-manager value="C:\Users\shkim\AppData\Roaming\JetBrains\IntelliJIdea2024.3\node\versions\24.14.0\npm.cmd" />
+    <envs />
+    <method v="2" />
+  </configuration>
+</component>

@@ -1,0 +1,35 @@
+/*
+ * - Role: Defines frontend style rules.
+ * - Notes: This file is loaded by a matching component or page.
+ */
+
+.metaframe-notice {
+  border: 1px solid var(--mf-border-subtle);
+  border-radius: 12px;
+  background: var(--mf-surface-elevated);
+  box-shadow: 0 18px 48px var(--mf-shadow-overlay);
+}
+
+.metaframe-notice .ant-notification-notice-message {
+  color: var(--mf-text-primary);
+}
+
+.metaframe-notice .ant-notification-notice-description {
+  color: var(--mf-text-secondary);
+}
+
+.metaframe-notice--success .ant-notification-notice-icon {
+  color: var(--mf-success);
+}
+
+.metaframe-notice--info .ant-notification-notice-icon {
+  color: var(--mf-info);
+}
+
+.metaframe-notice--warning .ant-notification-notice-icon {
+  color: var(--mf-warning);
+}
+
+.metaframe-notice--error .ant-notification-notice-icon {
+  color: var(--mf-danger);
+}

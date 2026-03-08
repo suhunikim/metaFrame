@@ -1,0 +1,21 @@
+/*
+ * - Role: Defines frontend style rules.
+ * - Notes: This file is loaded by a matching component or page.
+ */
+
+.new-project-modal__empty {
+  display: flex;
+  justify-content: center;
+  padding: 48px 0;
+}
+
+.new-project-modal__preset {
+  margin-bottom: 12px;
+}
+
+.new-project-modal__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 20px;
+}

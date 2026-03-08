@@ -1,0 +1,107 @@
+/*
+ * - Role: Defines frontend style rules.
+ * - Notes: This file is loaded by a matching component or page.
+ */
+
+.status-bar {
+  display: grid;
+  grid-template-columns: minmax(240px, 1.1fr) minmax(0, 1.5fr) auto;
+  align-items: center;
+  gap: 12px;
+  height: 100%;
+  padding: 0 16px;
+  color: var(--mf-text-secondary);
+  font-size: 12px;
+}
+
+.status-bar__section {
+  display: inline-flex;
+  align-items: center;
+  min-width: 0;
+  gap: 10px;
+}
+
+.status-bar__section--trail {
+  overflow: hidden;
+}
+
+.status-bar__section--message {
+  overflow: hidden;
+}
+
+.status-bar__section--message .ant-typography {
+  margin: 0;
+  overflow: hidden;
+  color: var(--mf-text-secondary);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.status-bar__section--system {
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.status-bar__section--mode {
+  white-space: nowrap;
+}
+
+.status-bar__system-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+  color: var(--mf-text-muted);
+  background: color-mix(in srgb, var(--mf-text-primary) 4%, transparent);
+  border: 1px solid var(--mf-border-subtle);
+  border-radius: 999px;
+}
+
+.status-bar__system-item--active {
+  color: var(--mf-text-primary);
+  border-color: color-mix(in srgb, var(--mf-accent) 40%, var(--mf-border-subtle));
+}
+
+.status-bar__dot {
+  width: 4px;
+  height: 4px;
+  background: var(--mf-text-muted);
+  border-radius: 999px;
+}
+
+.status-bar__breadcrumb,
+.status-bar__trail {
+  display: inline-flex;
+  align-items: center;
+  min-width: 0;
+  gap: 8px;
+  overflow: hidden;
+}
+
+.status-bar__breadcrumb-item,
+.status-bar__trail-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.status-bar__breadcrumb-separator,
+.status-bar__trail-separator {
+  color: var(--mf-text-muted);
+}
+
+@media (max-width: 1180px) {
+  .status-bar {
+    grid-template-columns: 1fr;
+    grid-auto-rows: minmax(0, auto);
+    gap: 6px;
+    padding: 8px 14px;
+  }
+
+  .status-bar__section--system {
+    justify-content: flex-start;
+  }
+}

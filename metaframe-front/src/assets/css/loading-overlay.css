@@ -1,0 +1,19 @@
+/*
+ * - Role: Defines frontend style rules.
+ * - Notes: This file is loaded by a matching component or page.
+ */
+
+.global-spinner-overlay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 240px;
+  padding: 48px 24px;
+}
+
+.global-spinner-overlay .ant-spin {
+  color: var(--mf-text-primary);
+}

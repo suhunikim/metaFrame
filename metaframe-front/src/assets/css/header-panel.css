@@ -1,0 +1,168 @@
+/*
+ * - Role: Defines frontend style rules.
+ * - Notes: This file is loaded by a matching component or page.
+ */
+
+.header-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.9fr) minmax(0, 1.1fr);
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  min-width: 0;
+}
+
+.header-panel__left,
+.header-panel__center,
+.header-panel__right {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  gap: 12px;
+}
+
+.header-panel__center {
+  justify-content: center;
+}
+
+.header-panel__right {
+  justify-content: flex-end;
+}
+
+.header-panel__icon-button {
+  color: var(--mf-text-primary) !important;
+}
+
+.header-panel__brand {
+  display: inline-flex;
+  align-items: center;
+  min-width: 0;
+  gap: 10px;
+}
+
+.header-panel__logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  color: white;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  background: linear-gradient(135deg, var(--mf-accent), #31b0ff);
+  border-radius: 10px;
+}
+
+.header-panel__brand-copy {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+}
+
+.header-panel__product-name.ant-typography,
+.header-panel__product-subtitle.ant-typography {
+  margin: 0;
+}
+
+.header-panel__product-name.ant-typography {
+  color: var(--mf-text-primary);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.header-panel__product-subtitle.ant-typography {
+  color: var(--mf-text-muted);
+  font-size: 11px;
+  line-height: 1.2;
+}
+
+.header-panel__search {
+  width: min(100%, 360px);
+}
+
+.header-panel__search .ant-input-affix-wrapper {
+  color: var(--mf-text-muted);
+  background: color-mix(in srgb, var(--mf-text-primary) 5%, transparent);
+  border-color: var(--mf-border-subtle);
+  box-shadow: none;
+}
+
+.header-panel__search .ant-input {
+  cursor: pointer;
+  color: var(--mf-text-muted);
+  background: transparent;
+}
+
+.header-panel__shortcut.ant-typography {
+  color: var(--mf-text-muted);
+  font-size: 11px;
+}
+
+.header-panel__status {
+  display: inline-flex;
+  align-items: center;
+  min-width: 0;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.header-dropdown-menu {
+  min-width: 180px;
+}
+
+@media (max-width: 1320px) {
+  .header-panel {
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      'left right'
+      'center right';
+  }
+
+  .header-panel__left {
+    grid-area: left;
+  }
+
+  .header-panel__center {
+    grid-area: center;
+    justify-content: flex-start;
+  }
+
+  .header-panel__right {
+    grid-area: right;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+}
+
+@media (max-width: 980px) {
+  .header-panel {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'left'
+      'center'
+      'right';
+  }
+
+  .header-panel__center,
+  .header-panel__right {
+    justify-content: flex-start;
+  }
+
+  .header-panel__right {
+    align-items: flex-start;
+  }
+
+  .header-panel__status {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 720px) {
+  .header-panel__brand-copy,
+  .header-panel__search {
+    display: none;
+  }
+}

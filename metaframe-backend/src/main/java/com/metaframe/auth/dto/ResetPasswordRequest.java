@@ -1,0 +1,15 @@
+// - Role: Defines a backend implementation unit.
+// - Notes: This file works with nearby controllers, services, or repositories.
+
+package com.metaframe.auth.dto;
+
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+
+public record ResetPasswordRequest(
+    @NotBlank(message = "email is required.")
+    @Email(message = "email must be a valid email address.")
+    String email,
+    String extraIdentifier
+) {
+}

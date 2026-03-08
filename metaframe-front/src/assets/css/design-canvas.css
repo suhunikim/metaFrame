@@ -1,0 +1,115 @@
+/*
+ * - Role: Defines frontend style rules.
+ * - Notes: This file is loaded by a matching component or page.
+ */
+
+.design-canvas {
+  height: 100%;
+  padding: 24px;
+}
+
+.design-canvas__surface {
+  display: flex;
+  min-height: 100%;
+  justify-content: center;
+}
+
+.design-canvas__node {
+  position: relative;
+  width: min(100%, 980px);
+  border: 1px solid color-mix(in srgb, var(--mf-border-strong) 80%, transparent);
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--mf-surface-elevated) 92%, transparent);
+  box-shadow: 0 16px 32px color-mix(in srgb, var(--mf-overlay-strong) 20%, transparent);
+  transition: border-color 120ms ease, transform 120ms ease, box-shadow 120ms ease;
+}
+
+.design-canvas__node--hovered {
+  border-color: color-mix(in srgb, var(--mf-accent) 36%, var(--mf-border-subtle));
+  transform: translateY(-1px);
+}
+
+.design-canvas__node--selected {
+  border-color: var(--mf-accent);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--mf-accent) 46%, transparent),
+    0 18px 32px color-mix(in srgb, var(--mf-overlay-strong) 20%, transparent);
+}
+
+.design-canvas__node--readonly {
+  cursor: default;
+}
+
+.design-canvas__node-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 14px;
+  color: var(--mf-text-muted);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--mf-border-subtle);
+}
+
+.design-canvas__node-body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 18px;
+}
+
+.design-canvas__html-shell,
+.design-canvas__widget-shell {
+  display: flex;
+  min-height: 42px;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  color: var(--mf-text-primary);
+  background: color-mix(in srgb, var(--mf-surface-strong) 72%, transparent);
+  border: 1px dashed var(--mf-border-subtle);
+  border-radius: 12px;
+}
+
+.design-canvas__html-tag {
+  padding: 4px 8px;
+  color: var(--mf-accent);
+  font-size: 12px;
+  font-weight: 700;
+  background: color-mix(in srgb, var(--mf-accent) 14%, transparent);
+  border-radius: 999px;
+}
+
+.design-canvas__html-text {
+  color: var(--mf-text-secondary);
+}
+
+.design-canvas__children {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.design-canvas__selection-badge,
+.design-canvas__hover-badge {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  z-index: 2;
+  padding: 4px 8px;
+  font-size: 11px;
+  font-weight: 700;
+  border-radius: 999px;
+}
+
+.design-canvas__selection-badge {
+  color: #ffffff;
+  background: var(--mf-accent);
+}
+
+.design-canvas__hover-badge {
+  color: var(--mf-accent);
+  background: color-mix(in srgb, var(--mf-accent) 16%, transparent);
+}
